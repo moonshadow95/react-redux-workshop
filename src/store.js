@@ -1,23 +1,27 @@
 import {createStore} from "redux";
+
 const initState = {
-    mode: 'WELCOME',
+    mode: 'READ',
     welcome_content: {
-        title:'WEB',
+        title: 'WEB',
         desc: "Hello, WEB",
     },
     selected_id: 1,
-    contents:[
-        {id:1, title: 'HTML', desc: 'HTML is...'},
-        {id:2, title: 'CSS', desc: 'CSS is...'},
-        {id:3, title: 'Java Script', desc: 'Java Script is...'},
+    contents: [
+        {id: 1, title: 'HTML', desc: 'HTML is...'},
+        {id: 2, title: 'CSS', desc: 'CSS is...'},
+        {id: 3, title: 'Java Script', desc: 'Java Script is...'},
     ]
 }
 
-function reducer(state = initState, action){
-    if(state === undefined){
+function reducer(state = initState, action) {
+    if (state === undefined) {
         return initState;
+    }
+    if (action.type === 'CHANGE_MODE') {
+        return {...state, mode: action.mode}
     }
     return state
 }
 
-export default createStore(reducer)
+export default createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())

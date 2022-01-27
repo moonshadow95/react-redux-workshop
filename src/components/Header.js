@@ -1,10 +1,19 @@
 import React from 'react';
+import {connect} from 'react-redux'
 
-const Header = (props) => (
-    <header>
-        <h1>WEB</h1>
-        World Wide Web
-    </header>
-);
+const Header = ({onClick}) => {
+    return (
+        <header>
+            <h1>
+                <a href="#welcome" onClick={onClick}>WEB</a>
+            </h1>
+            World Wide Web
+        </header>
+    )
+};
 
-export default Header;
+export default connect(null, (dispatch) => {
+    return {onClick: ()=>{
+            dispatch({type: 'CHANGE_MODE', mode: 'WELCOME'})
+        }}
+})(Header);

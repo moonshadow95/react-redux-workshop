@@ -1,12 +1,12 @@
 import Header from "./components/Header";
-import Nav from "./components/Nav";
+import NavContainer from "./containers/NavContainer";
 import Article from "./components/Article";
 
 function App() {
     return (
         <div className="App">
             <Header/>
-            <Nav/>
+            <NavContainer/>
             <Article />
         </div>
     );
