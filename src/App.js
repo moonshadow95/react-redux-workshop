@@ -1,15 +1,35 @@
 import Header from "./components/Header";
 import NavContainer from "./containers/NavContainer";
-import ArticleContainer from "./containers/ArticleContainer";
+import ReadContainer from "./containers/ReadContainer";
+import ControlsContainer from "./containers/ControlsContainer";
+import CreateContainer from "./containers/CreateContainer";
+import {connect} from 'react-redux'
 
-function App() {
+function App({mode}) {
+    let article = null
+    if(mode === 'WELCOME'){
+        article = <ReadContainer/>
+    }
+    if (mode === 'READ') {
+        article = <ReadContainer/>
+    }
+    if (mode === 'CREATE'){
+        article = <CreateContainer/>
+    }
     return (
         <div className="App">
             <Header/>
             <NavContainer/>
-            <ArticleContainer />
+            <ControlsContainer/>
+            {article}
         </div>
     );
 }
 
-export default App;
+export default connect(
+    (state) => {
+        return {
+            mode: state.mode
+        }
+    }
+)(App);
