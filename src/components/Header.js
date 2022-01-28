@@ -14,6 +14,6 @@ const Header = ({onClick}) => {
 
 export default connect(null, (dispatch) => {
     return {onClick: ()=>{
-            dispatch({type: 'CHANGE_MODE', mode: 'WELCOME'})
+            dispatch({type: 'WELCOME'})
         }}
 })(Header);

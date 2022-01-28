@@ -1,19 +1,19 @@
 import React from 'react';
 
-const Nav = (props) => (
-    <nav>
-        <ol>
-            <li>
-                <a href="html.html">HTML</a>
-            </li>
-            <li>
-                <a href="css.html">CSS</a>
-            </li>
-            <li>
-                <a href="javascript.html">JavaScript</a>
-            </li>
-        </ol>
-    </nav>
-)
+const Nav = ({data, onClick}) => {
+    return (
+        <nav>
+            <ol>
+                {data.map(d =>
+                    <li key={d.id}>
+                        <button onClick={(id) => {
+                            onClick(d.id)
+                        }}>{d.title}</button>
+                    </li>
+                )}
+            </ol>
+        </nav>
+    )
+}
 
 export default Nav;

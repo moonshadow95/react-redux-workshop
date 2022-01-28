@@ -1,13 +1,13 @@
 import Header from "./components/Header";
 import NavContainer from "./containers/NavContainer";
-import Article from "./components/Article";
+import ArticleContainer from "./containers/ArticleContainer";
 
 function App() {
     return (
         <div className="App">
             <Header/>
             <NavContainer/>
-            <Article />
+            <ArticleContainer />
         </div>
     );
 }

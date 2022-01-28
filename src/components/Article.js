@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Article = (props) => (
+const Article = ({title, desc}) => (
     <article>
-        <h2>Welcome</h2>
-        Hello, WEB.
+        <h2>{title}</h2>
+        {desc}
     </article>
 );
 
