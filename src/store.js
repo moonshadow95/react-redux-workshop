@@ -6,7 +6,7 @@ const initState = {
         title: 'WEB',
         desc: "Hello, WEB",
     },
-    selected_id: 1,
+    selected_id: null,
     max_content_id: 3,
     contents: [
         {id: 1, title: 'HTML', desc: 'HTML is...'},
@@ -20,7 +20,7 @@ function reducer(state = initState, action) {
         return initState;
     }
     if (action.type === 'WELCOME') {
-        return {...state, mode: 'WELCOME'}
+        return {...state, mode: 'WELCOME', selected_id: null}
     }
     if (action.type === 'READ') {
         return {...state, mode: 'READ', selected_id: action.id}

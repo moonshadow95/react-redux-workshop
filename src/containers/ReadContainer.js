@@ -2,7 +2,7 @@ import Read from '../components/Read'
 import {connect} from 'react-redux'
 
 export default connect(
-    function (state) {
+    (state) => {
         if (state.mode === 'WELCOME') {
             return {title: 'WEB', desc: 'HELLO, WEB!'}
         } else {
