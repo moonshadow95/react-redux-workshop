@@ -8,7 +8,7 @@ const Controls = ({onClick}) => (
         <li><a href="update" onClick={(e)=>{
             e.preventDefault()
             onClick('UPDATE')}}>Update</a></li>
-        <li><input type='button' value='Delete' onClick={()=>{onClick('DELETE')}}/></li>
+        <li><input type='button' value='Delete' onClick={()=>{onClick('DELETE_PROCESS')}}/></li>
     </ul>
 );
 
